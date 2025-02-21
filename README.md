@@ -53,7 +53,7 @@ I recently wrapped up a DevOps project where the goal was to host a static HTML 
    - Generated a key pair for SSH access to instances.
 
 8. **Webserver Deployment Script:**
-   - Developed a script to install the website on EC2 instances in private subnets.
+   - Script to install the website on EC2 instances in private subnets.
      ```bash
      #!/bin/bash
      sudo su
