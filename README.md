@@ -4,7 +4,8 @@
 
 I recently wrapped up a DevOps project where the goal was to host a static HTML website on AWS. The focus was on building a robust infrastructure for the website, making it highly available, fault-tolerant, and scalable.
 
-![Final Architecture](https://github.com/bconway1906/Static-Website-AWS/assets/148906255/cb325ba8-3bf4-43ff-9d62-1d3c96e50dc0)
+![Final Architecture](https://github.com/user-attachments/assets/932400b2-83bb-4ed9-88a3-7b283d261f1a)
+
 
 ## Architecture Overview:
 
@@ -32,18 +33,21 @@ I recently wrapped up a DevOps project where the goal was to host a static HTML 
 4. **Subnets and Route Tables:**
    - Established public and private subnets in two Availability Zones.
    - Created route tables, associating public subnets with the public route table.
-  
-![VPC Architecture 1](https://github.com/bconway1906/Static-Website-AWS/assets/148906255/eb6c51b1-d82e-47af-9818-7e7a430ecd00)
+
+![VPC Architecture 1](https://github.com/user-attachments/assets/c477bcd5-4090-4f25-9339-d20576af1e94)
+
 
 5. **NAT Gateway:**
    - Deployed NAT Gateways in both Availability Zones for internet access in private subnets.
   
-![Nat_Gateway_Reference_Architecture copy](https://github.com/bconway1906/Static-Website-AWS/assets/148906255/9201ccfc-a8bd-4701-bf9a-ab105076136d)
+![Nat_Gateway_Reference_Architecture copy](https://github.com/user-attachments/assets/b747679e-3473-4cf1-b2da-ee512635ddb4)
+
 
 6. **Security Groups:**
    - Configured security groups for ALB, SSH, and webservers to control traffic.
   
-![Security Group](https://github.com/bconway1906/Static-Website-AWS/assets/148906255/898a8a0d-0da8-43e0-b310-21696e527a35)
+![Security Group](https://github.com/user-attachments/assets/853a654a-565b-4930-9ab1-51ce50fbfa51)
+
 
 7. **Key Pair:**
    - Generated a key pair for SSH access to instances.
@@ -63,18 +67,6 @@ I recently wrapped up a DevOps project where the goal was to host a static HTML 
      systemctl enable httpd 
      systemctl start httpd
      ```
-     - Explanation:
-        - `sudo su`: Switch to the superuser for executing commands with elevated privileges.
-        - `yum update -y`: Update system packages to the latest versions.
-        - `yum install -y httpd`: Install the Apache web server.
-        - `cd /var/www/html`: Change to the web server directory.
-        - `wget ...`: Download the website files from GitHub.
-        - `unzip ...`: Unzip the downloaded files.
-        - `cp ...`: Copy the unzipped files to the web server directory.
-        - `rm -rf ...`: Remove unnecessary files.
-        - `systemctl enable httpd`: Enable the Apache service to start on boot.
-        - `systemctl start httpd`: Start the Apache service.
-
 9. **Application Load Balancer (ALB):**
    - Launched EC2 instances in private app subnets and associated them with an ALB.
    - Configured a target group and associated it with the ALB.
@@ -94,5 +86,6 @@ I recently wrapped up a DevOps project where the goal was to host a static HTML 
 
 This project achieved the goal of hosting a static website on AWS with a three-tier architecture. The infrastructure is designed to ensure resilience, scalability, and effective management of web traffic.
 
-<img width="1354" alt="Screenshot 2023-12-14 at 2 52 49 PM" src="https://github.com/bconway1906/Static-Website-AWS/assets/148906255/d89b6dcd-e116-457b-bfb7-5d0d6e2c36a8">
+<img width="1354" alt="Screenshot 2023-12-14 at 2 52 49 PM" src="https://github.com/user-attachments/assets/0c2c87b5-f14f-4809-a6b9-b589a0118510" />
+
    
